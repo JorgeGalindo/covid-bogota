@@ -24,7 +24,7 @@ single_daily_df <- individual_daily_df %>%
   mutate(status_date=today())
 
 
-## Saving the output -- the append = TRUE part is crucial! Just change the path. 
+## Saving the output -- the append = TRUE part is crucial! Just edit the path.
 write.table(single_daily_df, "/Users/jorgegalindo/Desktop/projects/covid-Bogota/data_output/cases_dailystatus.csv", sep = ",", append = TRUE, quote = FALSE,
             col.names = FALSE, row.names = FALSE)
 

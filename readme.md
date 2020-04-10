@@ -17,17 +17,22 @@ You'll see a couple folders: scripts and data_output. They contain what they see
 
 Categories are in Spanish so far. I might add some code to translate them in the future.
 
+
+**Hosp_statustracker.R** takes advantage of the fact that Bogotá is providing data on hospital/ICU occupation rates as well. If you run it daily, the .csv will accumulate daily data on how many available beds are there in the city, classified by ownership of the hospital, type of care provided, and target population. The .csv **hosp_dailystatus.csv** keeps the data. Again, for daily runs I would advice something like 8-9PM EST, since Bogotá updates the file around 1-4PM local time.
+
+
 ## What will be in (hopefully)
 
-Bogotá is providing data on hospital/ICU occupation rates as well. I plan to build a daily tracker for that in the coming hours :)
+The whole setup was produced once we got a second update on both hospital occupancy rates and daily cases (9 April 2020). I however downloaded a copy of the first original .csv files uploaded on the 8th of April. In the coming hours, I will add the information to our .csv files here in the repository so everyone has the data from the first second.
+
+
+I also plan to find out how to add some code to schedule a daily download and update of the .csv files. Any advice will be more than welcome!
 
 ## Author
 
-Jorge Galindo
-
-[@JorgeGalindo](https://twitter.com/jorgegalindo)
+Jorge Galindo - [@JorgeGalindo](https://twitter.com/jorgegalindo)
 
 
 ## License
 
-Free to use however you see fit! But I wish you will read some epidemiological specialized literature before getting too excited about trends, etc. I'm no epidemiologist myself, that's why I dare advising it. I hope you can provide something useful to the public debate. I'm sure you will :)
+Free to use however you see fit! But I wish you read some specialized literature before getting too excited about trends, etc. I'm no epidemiologist myself, that's why I know you'll need it in case you are neither. I hope you can provide something useful to the public debate. I'm sure you will :)

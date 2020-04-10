@@ -3,6 +3,7 @@
 
 rm(list = ls())
 library(tidyverse)
+setwd(here::here())
 
 #1. Scrap and clean up a bit
 individual_daily_df <- read.csv("https://datosabiertos.bogota.gov.co/dataset/44eacdb7-a535-45ed-be03-16dbbea6f6da/resource/b64ba3c4-9e41-41b8-b3fd-2da21d627558/download/osb_enftransm-covid-19.csv", sep =",", col.names=c("detect_date","city","localidad","age","sex","type","place","status"), fileEncoding="Windows-1252")
