@@ -26,14 +26,7 @@ single_daily_df <- individual_daily_df %>%
 
 ## Saving the output -- the append = TRUE part is crucial! Just edit the path.
 write.table(single_daily_df, "/Users/jorgegalindo/Desktop/projects/covid-Bogota/data_output/cases_dailystatus.csv", sep = ",", append = TRUE, quote = FALSE,
-            col.names = FALSE, row.names = FALSE)
+            col.names = TRUE, row.names = FALSE)
 
 #-------# If you run the script once daily up to here, you will get your CSV with daily updates. 
 #-------# My advice: run it in the evening (Bogotá/EST time). You may also want to consider automating the process with CRON.
-
-#3. Recover it and merge with basic df to get a wide df with the whole evolution for each patient
-
-daily_df <- read.csv("/Users/jorgegalindo/Desktop/projects/covid-Bogota/data_output/cases_dailystatus.csv", sep = ",")
-
-key_df <- individual_daily_df %>%
-  select(id, detect_date, loc_name, age, sex)

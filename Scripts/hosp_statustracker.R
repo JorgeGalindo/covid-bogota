@@ -63,8 +63,19 @@ hosp_daily_df <- rbind(hosp_daily_private_df, hosp_daily_public_df)
 
 hosp_daily_df <- hosp_daily_df %>%
   separate(bedtype, sep = "_", into = c("ownership","care","population")) %>%
-  mutate(status_date=today())
+  mutate(
+        total=as.character(total),
+        occupied=as.character(occupied)
+        ) %>%
+  mutate(
+        total=gsub("[.]","", total),
+        occupied=gsub("[.]","", occupied)
+        ) %>%
+  mutate(status_date=today(),
+         total=as.numeric(total),
+         occupied=as.numeric(occupied)
+         )
 
 ## Saving the output -- the append = TRUE part is crucial! Just change the path if you wish. 
 write.table(hosp_daily_df, "/Users/jorgegalindo/Desktop/projects/covid-Bogota/data_output/hosp_dailystatus.csv", sep = ",", append = TRUE, quote = FALSE,
-            col.names = FALSE, row.names = FALSE)
+            col.names = TRUE, row.names = FALSE, fileEncoding = "UTF-8")

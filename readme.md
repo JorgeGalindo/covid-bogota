@@ -15,8 +15,6 @@ You'll see a couple folders: scripts and data_output. They contain what they see
 **Basic_extract.R** simply extracts the individual anonimized data provided by the city of Bogotá and produces a standard tidy dataframe with cases and deaths in each localidad (Bogotá is administratively subdivided into localidades, a Spanish word that roughly translates to neighbourhood).
 **daily_statustracker.R** is a bit more exciting. It extracts the individual anonimized data provided by the city of Bogotá and produces a .csv file called **cases_dailystatus.csv**. If you run the script every day at the same time (I would advice something like 8-9PM EST, since Bogotá updates the file around 1-4PM local time), the .csv will accumulate the daily status (mild, moderate, severe case, death) and location (home, hospital, hospital ICU, dead) of each case, **assuming that the originally downloaded .csv keeps an untouched case order**. So far it has done so. I will keep an eye on that.
 
-Categories are in Spanish so far. I might add some code to translate them in the future.
-
 
 **Hosp_statustracker.R** takes advantage of the fact that Bogotá is providing data on hospital/ICU occupation rates as well. If you run it daily, the .csv will accumulate daily data on how many available beds are there in the city, classified by ownership of the hospital, type of care provided, and target population. The .csv **hosp_dailystatus.csv** keeps the data. Again, for daily runs I would advice something like 8-9PM EST, since Bogotá updates the file around 1-4PM local time.
 
@@ -27,6 +25,9 @@ The whole setup was produced once we got a second update on both hospital occupa
 
 
 I also plan to find out how to add some code to schedule a daily download and update of the .csv files. Any advice will be more than welcome!
+
+Last but not least, categories for daily cases' status are in Spanish so far. I might add some code to translate them in the future.
+
 
 ## Author
 
