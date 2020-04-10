@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586528120433.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3517257988",
+    "id" : "30E3638D",
+    "lastKnownWriteTime" : 1586479578,
+    "last_content_update" : 1586479578,
+    "path" : "~/Desktop/projects/covid-bogota/Scripts/basic_extract.R",
+    "project_path" : "Scripts/basic_extract.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
