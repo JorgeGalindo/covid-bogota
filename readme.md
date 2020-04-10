@@ -18,15 +18,13 @@ You'll see a couple folders: scripts and data_output. They contain what they see
 
 **Hosp_statustracker.R** takes advantage of the fact that Bogotá is providing data on hospital/ICU occupation rates as well. If you run it daily, the .csv will accumulate daily data on how many available beds are there in the city, classified by ownership of the hospital, type of care provided, and target population. The .csv **hosp_dailystatus.csv** keeps the data. Again, for daily runs I would advice something like 8-9PM EST, since Bogotá updates the file around 1-4PM local time.
 
+I do keep the .csv documents daily updated, starting 8 April 2020.
+
 
 ## What will be in (hopefully)
 
-The whole setup was produced once we got a second update on both hospital occupancy rates and daily cases (9 April 2020). I however downloaded a copy of the first original .csv files uploaded on the 8th of April. In the coming hours, I will add the information to our .csv files here in the repository so everyone has the data from the first second.
 
-
-I also plan to find out how to add some code to schedule a daily download and update of the .csv files. Any advice will be more than welcome!
-
-Last but not least, categories for daily cases' status are in Spanish so far. I might add some code to translate them in the future.
+Among other things I plan to find out how to add some code to schedule a daily download and update of the .csv files. Any advice will be more than welcome!
 
 
 ## Author
