@@ -11,10 +11,16 @@ individual_daily_df <- read.csv("https://datosabiertos.bogota.gov.co/dataset/44e
 id <- rownames(individual_daily_df)
 individual_daily_df <- cbind(id=id, individual_daily_df)
 
-
 individual_daily_df <- individual_daily_df %>% 
   mutate(detect_date=as.Date(detect_date,format="%d/%m/%Y")) %>%
   separate(localidad, sep = " - ", into = c("loc_code", "loc_name"))
+
+
+##Translate
+individual_daily_df <- individual_daily_df  %>% 
+  mutate(place=str_replace_all(place, c("Casa"="Home","Hospital UCI"="ICU", "Fallecido"="Dead")),
+         status=str_replace_all(status, c("Leve"="Mild","Moderado"="Moderate", "Grave"="Critical", "GRAVE"="Critical","Fallecido"="Dead"))
+  )
 
 #2. Produce basic tidy dataframe, with daily and cumulative cases
 

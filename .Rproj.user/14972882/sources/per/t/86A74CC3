@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586604508721.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3803020361",
+    "id" : "86A74CC3",
+    "lastKnownWriteTime" : 1586605710,
+    "last_content_update" : 1586605710985,
+    "path" : "~/Desktop/projects/covid-colombia/Scripts/daily_statustracker.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "16,11",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

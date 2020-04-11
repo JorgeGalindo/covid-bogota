@@ -1,4 +1,4 @@
-#Extracting, cleaning and producing a useful daily tracker of the health status of Bogotá's daily COVID infections
+#Extracting, cleaning and producing a useful daily tracker of the health status of Colombia's daily COVID infections
 #Author: Jorge Galindo
 
 rm(list = ls())
@@ -6,27 +6,23 @@ library(tidyverse)
 library(lubridate)
 
 #1. Scrap and clean up a bit
-individual_daily_df <- read.csv("https://datosabiertos.bogota.gov.co/dataset/44eacdb7-a535-45ed-be03-16dbbea6f6da/resource/b64ba3c4-9e41-41b8-b3fd-2da21d627558/download/osb_enftransm-covid-19.csv", sep =",", col.names=c("detect_date","city","localidad","age","sex","type","place","status"), fileEncoding="Windows-1252")
-
-id <- rownames(individual_daily_df)
-individual_daily_df <- cbind(id=id, individual_daily_df)
+individual_daily_df <- read.csv("Casos1.csv", sep =",", col.names=c("id", "detect_date","city","status","age","sex","type","country_origin"), fileEncoding="Windows-1252")
 
 individual_daily_df <- individual_daily_df %>% 
-  mutate(detect_date=as.Date(detect_date,format="%d/%m/%Y")) %>%
-  separate(localidad, sep = " - ", into = c("loc_code", "loc_name"))
+  mutate(detect_date=as.Date(detect_date,format="%d/%m/%Y"))
 
 
 ##Translate
 individual_daily_df <- individual_daily_df  %>% 
-  mutate(place=str_replace_all(place, c("Casa"="Home","Hospital UCI"="ICU", "Fallecido"="Dead")),
-         status=str_replace_all(status, c("Leve"="Mild","Moderado"="Moderate", "Grave"="Critical", "GRAVE"="Critical","Fallecido"="Dead"))
+  mutate(place=str_replace_all(status, c("Casa"="Home","Recuperado"="Recovered","Hospital UCI"="ICU", "Fallecido"="Dead")),
+         status=str_replace_all(origin, c("Importado"="Imported","Relacionado"="Related", "En estudio"="Unknown"))
                 )
 
 #2. Produce a daily updated csv file storing the evolving status of all individual patients 
 #(necessary assumption: original table does not change the order of patients)
 
 single_daily_df <- individual_daily_df %>%
-  select(id, place, status) %>%
+  select(id, status) %>%
   mutate(status_date=today())
 
 
