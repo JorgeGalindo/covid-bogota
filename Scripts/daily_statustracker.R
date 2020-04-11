@@ -2,6 +2,7 @@
 #Author: Jorge Galindo
 
 rm(list = ls())
+setwd(here::here())
 library(tidyverse)
 library(lubridate)
 
