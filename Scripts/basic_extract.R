@@ -25,7 +25,7 @@ individual_daily_df <- individual_daily_df  %>%
 #2. Produce basic tidy dataframe, with daily and cumulative cases
 
 basic_df <- individual_daily_df %>% 
-  mutate(dead = if_else(status == "Fallecido", "new_deaths" , "new_cases")) %>%
+  mutate(dead = if_else(status == "Dead", "new_deaths" , "new_cases")) %>%
   select(detect_date, loc_name, dead) %>%
   group_by(detect_date, loc_name, dead) %>%
   count()  %>%
