@@ -6,7 +6,7 @@ library(tidyverse)
 library(lubridate)
 
 #1. Scrap and clean up a bit
-individual_daily_df <- read.csv("Casos1.csv", sep =",", col.names=c("id", "detect_date","city","status","age","sex","type","country_origin"), fileEncoding="Windows-1252")
+individual_daily_df <- read.csv("Casos1.csv", sep =",", col.names=c("id", "detect_date","municipality","dept","status","age","sex","type","country_origin"))
 
 individual_daily_df <- individual_daily_df %>% 
   mutate(detect_date=as.Date(detect_date,format="%d/%m/%Y"))
@@ -15,11 +15,10 @@ individual_daily_df <- individual_daily_df %>%
 ##Translate
 individual_daily_df <- individual_daily_df  %>% 
   mutate(place=str_replace_all(status, c("Casa"="Home","Recuperado"="Recovered","Hospital UCI"="ICU", "Fallecido"="Dead")),
-         status=str_replace_all(origin, c("Importado"="Imported","Relacionado"="Related", "En estudio"="Unknown"))
+         status=str_replace_all(country_origin, c("Importado"="Imported","Relacionado"="Related", "En estudio"="Unknown"))
                 )
 
 #2. Produce a daily updated csv file storing the evolving status of all individual patients 
-#(necessary assumption: original table does not change the order of patients)
 
 single_daily_df <- individual_daily_df %>%
   select(id, status) %>%
