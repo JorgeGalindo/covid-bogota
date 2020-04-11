@@ -2,7 +2,7 @@
 
 This is just an ongoing personal R project aimed to extract and work with official COVID-19 infection data provided by the city of Bogotá (Colombia). The city uploaded a series of .csv files on the 8th of April 2020. The project will go on as long as I have access to the data, and/or as long as the epidemic outbreak lasts.
 
-Today (ie. last update) = 9 April 2020
+Today (ie. last update) = 10 April 2020
 
 ## What you need
 

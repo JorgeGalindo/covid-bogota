@@ -1,24 +1,24 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1586528120843.000,
+    "created" : 1586604007273.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3412254320",
-    "id" : "65C82F65",
+    "hash" : "0",
+    "id" : "76F04418",
     "lastKnownWriteTime" : 1586528140,
-    "last_content_update" : 1586528140410,
+    "last_content_update" : 1586528140,
     "path" : "~/Desktop/projects/covid-bogota/Scripts/hosp_statustracker.R",
     "project_path" : "Scripts/hosp_statustracker.R",
     "properties" : {
-        "cursorPosition" : "79,28",
-        "scrollLine" : "53"
+        "cursorPosition" : "81,0",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 3,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
