@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586823597038.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1861811032",
+    "id" : "CF6551F2",
+    "lastKnownWriteTime" : 1587042685,
+    "last_content_update" : 1587042685363,
+    "path" : "~/Desktop/projects/covid-bogota/Scripts/daily_statustracker.R",
+    "project_path" : "Scripts/daily_statustracker.R",
+    "properties" : {
+        "cursorPosition" : "30,28",
+        "scrollLine" : "8"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
